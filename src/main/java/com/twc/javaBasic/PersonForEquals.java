@@ -44,7 +44,11 @@ public class PersonForEquals {
         //  (5) For any non-null reference x, x.equals(null) should return false.
         //
         // <--start
-        throw new RuntimeException("Not implemented");
+        if (this == obj)  return  true;
+        if (!(obj instanceof PersonForEquals)) return  false;
+        PersonForEquals personForEquals = (PersonForEquals) obj;
+        return  personForEquals.getName().equals(getName()) && personForEquals.getYearOfBirth()==getYearOfBirth();
+        //throw new RuntimeException("Not implemented");
         // --end-->
     }
 
@@ -59,7 +63,11 @@ public class PersonForEquals {
         //
         //
         // <--start
-        throw new RuntimeException("Not implemented");
+        int result = name.hashCode();
+        result = 17 * result + yearOfBirth;
+        return result;
+
+        //throw new RuntimeException("Not implemented");
         // --end-->
     }
 }

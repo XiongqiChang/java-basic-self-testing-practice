@@ -52,13 +52,16 @@ class GenericTest {
   //  You should not change the signature of the function. But you can change
   //  the declaration of the generic type parameter.
   // <--start
-  private static <T> T min(T[] values) {
+  private static <T extends Comparable> T min(T[] values) {
 
-    for (int i = 0; i < values.length; i++){
-
+    T min = values[0];
+    for (int i = 1; i < values.length; i++){
+          if (min.compareTo(values[i]) > 0)
+            min = values[i];
     }
 
-    throw new RuntimeException("Not implemented");
+    return min;
+    //throw new RuntimeException("Not implemented");
   }
   // --end-->
 
@@ -70,14 +73,16 @@ class GenericTest {
   //  A wildcard is not a type variable, so we can’t write code that uses ? as a type.
   // <--start
   private static void swap(Pair<?> pair) {
-
-
-
-
-    throw new RuntimeException("Not implemented");
+    swapHelper(pair);
+   // throw new RuntimeException("Not implemented");
   }
 
   // TODO: You can add additional method within the range if you like
 
+  private static <T>  void swapHelper(Pair<T> pair){
+    T first = pair.getFirst();
+    pair.setFirst(pair.getSecond());
+    pair.setSecond(first);
+  }
   // --end-->
 }

@@ -79,9 +79,6 @@ class FloatingTypeTest {
         // TODO:
         //  please implement the method to pass the test. It is better you call existing
         //  API rather than implemented yourself.
-
-
-
         return  Double.isInfinite(realNumber);
         //throw new RuntimeException("Not implemented");
     }
