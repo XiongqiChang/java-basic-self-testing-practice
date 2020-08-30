@@ -36,6 +36,9 @@ class CollectionsTest {
         //
         // <--start
 
+        while (iterator.hasNext()){
+            list.add(iterator.next());
+        }
         // --end-->
 
         return list;
@@ -61,7 +64,10 @@ class CollectionsTest {
         //  Please write your answer directly.
         //
         // <--start
-        final List<String> expected = null;
+        final List<String> expected = new ArrayList<>();
+        expected.add("Amy");
+        expected.add("Bob");
+        expected.add("Carl");
         // --end-->
 
         assertIterableEquals(expected, staff);
@@ -81,7 +87,12 @@ class CollectionsTest {
         //  Please write down your answer directly.
         //
         // <--start
-        final List<Integer> expected = null;
+        final List<Integer> expected = new ArrayList<>();
+        expected.add(0);
+        expected.add(1);
+        expected.add(2);
+        expected.add(10);
+        expected.add(11);
         // --end-->
 
         assertIterableEquals(expected, integers);

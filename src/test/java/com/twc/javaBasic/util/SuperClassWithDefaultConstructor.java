@@ -11,7 +11,7 @@ public class SuperClassWithDefaultConstructor {
 
     public String[] getLogs() { return logs.toArray(new String[0]); }
 
-    public SuperClassWithDefaultConstructor() { addLog("SuperClassWithDefaultConstructor.constructor()"); }
+    public SuperClassWithDefaultConstructor() { addLog("c"); }
     public SuperClassWithDefaultConstructor(String name) {
         addLog("SuperClassWithDefaultConstructor.constructor(String)");
     }

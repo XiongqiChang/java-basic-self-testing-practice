@@ -1,5 +1,10 @@
 package com.twc.javaBasic;
 
+import com.sun.corba.se.spi.ior.IdentifiableFactory;
+import sun.awt.geom.AreaOp;
+
+import java.util.Arrays;
+
 @SuppressWarnings({"unused", "FieldCanBeLocal"})
 public class MyStack {
     private int[] storage;
@@ -24,7 +29,7 @@ public class MyStack {
 
         // TODO: Please push the value into the storage here.
         // <--start
-
+        storage[count++] = value;
         // --end-->
     }
 
@@ -37,6 +42,13 @@ public class MyStack {
         //  IMPORTANT: You SHOULD NOT USE COLLECTIONS (such as List<T>) OTHER THAN ARRAY.
         //
         // <--start
+        int[] newDate = new int[newCapacity];
+        for (int i=0 ; i<count; i++){
+            newDate[i] = storage[i];
+        }
+        storage = newDate;
+        capacity = newCapacity;
+
 
         // --end-->
     }
@@ -57,7 +69,8 @@ public class MyStack {
         //  Please pop one element from the array. You should update the `count` field
         //  as well.
         // <--start
-
+        if (storage.length != 0)
+           return  storage[--count];
         // --end-->
 
         throw new UnsupportedOperationException("Stack is empty.");
